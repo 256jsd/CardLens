@@ -1,4 +1,4 @@
-name: Build CardLens APK
+name: Build CardLens 2.0 APK
 
 on:
   push:
@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Unpack CardLens
-        run: unzip -oq CardLens-APKIt-Ready.zip -d .
+      - name: Unpack CardLens 2.0
+        run: unzip -oq CardLens-2.0-Source.zip -d .
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -35,6 +35,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: CardLens-APK
+          name: CardLens-2.0-APK
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
